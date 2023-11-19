@@ -202,9 +202,18 @@ def search_tag():
         for note in notes:
             if tag in notes[note]['теги']:
                 notes_filtered[note] = notes[note]
-    btn_tag_search.setText("Скинути пошук")
-
-
+        btn_tag_search.setText("Скинути пошук")
+        list_notes.clear()
+        list_tags.clear()
+        list.notes.addItems(notes_filtered)
+    elif btn_tag_search.text()=="Скинути пошук":
+        list_tags.clear()
+        list_notes.clear()
+        field_tag.clear()
+        list_notes.addItems(notes)
+        btn_tag_search.setText("Шукати замітки до тегу")
+    else:
+        pass
 
 
 
