@@ -189,6 +189,10 @@ def del_tag():
     if list_notes.selectedItems():
         key=list_notes.selectedItems()[0].text()
         tag = list_tags.selectedItems()[0].text()
+        list_tags.clear()
+        field_tag.clear()
+        list_notes.clear()
+        list_notes.addItems(notes)
         notes[key]['теги'].remove(tag)
         with open("f.json","w") as file:
             json.dump(notes,file,sort_keys=True)
