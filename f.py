@@ -9,15 +9,9 @@ from PyQt5.QtWidgets import (QApplication,
 import json
 app = QApplication([])
 
-notes = {
-    "Ласкаво просимо!" : {
-        "текст" : "Це найкращий додаток для заміток у світі!",
-        "теги" : ["добро", "інструкція"]
-    }
-}
 
-with open('f.json', 'w') as file:
-    json.dump(notes, file)
+with open('f.json', 'r') as file:
+    notes=json.load(file)
 
 #параметри вікна
 notes_win = QWidget()
